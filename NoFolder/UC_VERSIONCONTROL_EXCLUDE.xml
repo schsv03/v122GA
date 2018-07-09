@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vara>
+   <metadata>
+      <row>
+         <version>12.2.0</version>
+      </row>
+   </metadata>
+   <general_attributes>
+      <row>
+         <name>UC_VERSIONCONTROL_EXCLUDE</name>
+         <type>VARA</type>
+         <sub_type>STATIC</sub_type>
+         <versioning_id>-282128857</versioning_id>
+      </row>
+   </general_attributes>
+   <variable_definitions>
+      <row>
+         <column_count>5</column_count>
+         <on_not_found>I</on_not_found>
+         <type>STATIC</type>
+         <data_type>C</data_type>
+         <validity_range>FREI</validity_range>
+      </row>
+   </variable_definitions>
+   <static_values>
+      <row>
+         <client>200</client>
+         <validity_range>FREI</validity_range>
+         <key>UC_USER_HOST</key>
+      </row>
+      <row>
+         <client>200</client>
+         <validity_range>FREI</validity_range>
+         <key>UC_USER_LANGUAGE</key>
+      </row>
+   </static_values>
+</vara>

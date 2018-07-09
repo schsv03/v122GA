@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+   <metadata>
+      <row>
+         <version>12.2.0</version>
+      </row>
+   </metadata>
+   <general_attributes>
+      <row>
+         <minimum_ae_version>11.2</minimum_ae_version>
+         <child_flags>00000000000000000000000000000000</child_flags>
+         <ert_trend>8</ert_trend>
+         <last_runtimes>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</last_runtimes>
+         <name>UC/AUTOMIC</name>
+         <type>USER</type>
+         <versioning_id>-708796273</versioning_id>
+      </row>
+   </general_attributes>
+   <user_attributes>
+      <row>
+         <is_active>1</is_active>
+         <filter>*</filter>
+         <first_name>System</first_name>
+         <last_name>UC4</last_name>
+         <last_session>2018-07-09 14:20:30.0</last_session>
+         <privilege>8795287582207</privilege>
+         <show_sys_messages>1</show_sys_messages>
+         <valid_from>2000-01-01 00:00:00.0</valid_from>
+         <valid_to>2000-01-01 00:00:00.0</valid_to>
+      </row>
+   </user_attributes>
+   <usrp>
+      <row>
+         <usrp_content>QUhWR1FORC1LSVdTQk1ZLUVHSkxYQVItQUhXWEJSSg==</usrp_content>
+         <usrp_lnr>2</usrp_lnr>
+      </row>
+      <row>
+         <usrp_content>QUhWR1FORC1LSVdTQk1ZLUVHSkxYQVItQUhXWEJSSg==</usrp_content>
+         <usrp_lnr>1</usrp_lnr>
+      </row>
+   </usrp>
+   <authorizations>
+      <row>
+         <auth_group>1</auth_group>
+         <bitcode>255</bitcode>
+         <filter_object_type>*</filter_object_type>
+         <filter_object_name>*</filter_object_name>
+         <filter_agent_name1>*</filter_agent_name1>
+         <filter_agent_name2>*</filter_agent_name2>
+         <filter_user_id1>*</filter_user_id1>
+         <filter_user_id2>*</filter_user_id2>
+         <filter_file_names1>*</filter_file_names1>
+         <filter_file_names2>*</filter_file_names2>
+         <line_number>1</line_number>
+      </row>
+   </authorizations>
+</user>
