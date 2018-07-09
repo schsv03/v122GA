@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs>
+   <metadata>
+      <row>
+         <version>12.2.0</version>
+      </row>
+   </metadata>
+   <general_attributes>
+      <row>
+         <minimum_ae_version>11.2</minimum_ae_version>
+         <auto_deactivation>N</auto_deactivation>
+         <child_flags>00000000000000000000000000000000</child_flags>
+         <platform>WINDOWS</platform>
+         <last_runtimes>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</last_runtimes>
+         <max_parallel_action>1</max_parallel_action>
+         <mrt_method>131072</mrt_method>
+         <mrt_time>000000</mrt_time>
+         <name>PCK.CUSTOM_ERT.PRV.JOB.ADDS_TASKS_DYNAMICALLY_DURING_RUNTIME@WINDOWS.4</name>
+         <type>JOBS</type>
+         <inherit_output_filter>N</inherit_output_filter>
+         <queue>CLIENT_QUEUE</queue>
+         <versioning_id>-365920132</versioning_id>
+      </row>
+   </general_attributes>
+   <scripts>
+      <row>
+         <process>ping 127.0.0.1 -n 60 &gt;nul</process>
+      </row>
+      <row>
+         <pre_process>:INCLUDE PCK.ITPA_SHARED.PRV.INCLUDE.PREPARE_JOB</pre_process>
+      </row>
+      <row>
+         <post_process><![CDATA[!:SET &RUNID# = GET_PARENT_NR(&$RUNID#)
+:SET &RUNID# = GET_UC_OBJECT_NR ("PCK.CUSTOM_ERT.ADDS_TASKS_DYNAMICALLY_DURING_RUNTIME.SUB_WORKFLOW.3")
+:SET &RETSTOP# = MODIFY_TASK(&RUNID#, STOP_MODIFY)
+:SET &RET# = MODIFY_TASK(&RUNID#,"PCK.CUSTOM_ERT.PRV.JOB.ADDS_TASKS_DYNAMICALLY_DURING_RUNTIME@WINDOWS.3",, ADD_TASK)
+:SET &RET2# = MODIFY_TASK(&RUNID#,"END",, ADD_DEPENDENCY,"PCK.CUSTOM_ERT.PRV.JOB.ADDS_TASKS_DYNAMICALLY_DURING_RUNTIME@WINDOWS.3",, "NONE")
+:SET &RET3# = MODIFY_TASK(&RUNID#,"PCK.CUSTOM_ERT.PRV.JOB.ADDS_TASKS_DYNAMICALLY_DURING_RUNTIME@WINDOWS.3",, ADD_DEPENDENCY,"PCK.CUSTOM_ERT.PRV.JOB.ADDS_TASKS_DYNAMICALLY_DURING_RUNTIME@WINDOWS.4",, "NONE")
+:SET &END# = MODIFY_TASK(&RUNID#,"END",, REMOVE_DEPENDENCY,"PCK.CUSTOM_ERT.PRV.JOB.ADDS_TASKS_DYNAMICALLY_DURING_RUNTIME@WINDOWS.4",, "NONE")
+:SET &RETCOMMIT# = MODIFY_TASK(&RUNID#, COMMIT)
+:SET &RETGO# = MODIFY_TASK(&RUNID#, GO)]]></post_process>
+      </row>
+   </scripts>
+   <job_attributes>
+      <row>
+         <activation_at_runtime>1</activation_at_runtime>
+         <platform>WINDOWS</platform>
+         <agent><![CDATA[<WIN>]]></agent>
+         <job_report_path>2</job_report_path>
+         <win_work_dir>c:\</win_work_dir>
+         <win_typ>0</win_typ>
+         <win_view>0</win_view>
+         <win_logon_as_batch>0</win_logon_as_batch>
+         <win_show_at_desktop>0</win_show_at_desktop>
+         <win_report_by_script>0</win_report_by_script>
+         <job_object></job_object>
+         <win_cmd></win_cmd>
+      </row>
+   </job_attributes>
+   <rollback_definitions>
+      <row>
+      </row>
+   </rollback_definitions>
+</jobs>
